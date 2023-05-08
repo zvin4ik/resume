@@ -1,0 +1,114 @@
+<div>
+  {{#with person}}
+  <div>
+    <h1>{{name}}</h1>
+    <h2>Вік: {{age}}</h2>
+    <h2>Стать: {{gender}}</h2>
+  </div>
+  <br>
+  <hr>
+  <address>
+    {{#with address}}
+    {{street}},
+    {{city}},
+    {{state}},
+    {{zip}},
+    {{country}}
+    {{/with}}
+  </address>
+  <hr>
+  {{> title data="Навчання"}}
+  {{#each education}}
+  <ul>
+    <li><b>Ступінь:</b> {{degree}}</li>
+    <li><b>Спеціальність:</b> {{major}}</li>
+    <li><b>Заклад:</b> {{university}}</li>
+    <li><b>Рік закінчення:</b> {{graduationYear}}</li>
+  </ul>
+  {{/each}}
+
+  <br>
+  <hr>
+  <br>
+
+  {{> title data="Досвід роботи"}}
+  {{#each workExperience}}
+  <ul>
+    <li><b>Компанія:</b> {{company}}</li>
+    <li><b>Посада:</b> {{title}}</li>
+    <li><b>З:</b> {{startDate}}</li>
+    <li><b>По:</b> {{endDate}}</li>
+    <li><b>Обов'язки:</b> {{responsibilities}}</li>
+    <li><b>Рік заснування:</b> {{year_founded}}</li>
+    <hr>
+    {{#each employees}}
+    <li>
+      <b>Команда:</b>
+      <ul>
+        <li><b>{{name}}</b></li> {{!-- продовження коду --}}
+        <li><b>Посада:</b> {{position}}</li>
+        <li><b>Відділ:</b> {{department}}</li>
+        {{#each projects}}
+        <li>
+          <hr>
+          <b>Проєкти:</b>
+          <ul>
+            <li>Назва: {{name}}</li>
+            <li>Обов'язки: {{description}}</li>
+            <li>Статус: {{status}}</li>
+            {{#each teams}}
+            <li>
+              <hr>
+              <b>Команди:</b>
+              <ul>
+                <li>Назва: {{team_name}}</li>
+                <li>Кервіник: {{team_leader.name}}</li>
+                <li>Посада: {{team_leader.title}}</li>
+                <li>Пошта: {{team_leader.email}}</li>
+                <li>
+                  <hr>
+                  <b>Співробітники:</b>
+                  {{#each team_members}}
+                  <ul>
+                    <li>Ім'я: {{name}}</li>
+                    <li>Посада: {{title}}</li>
+                    <li>Пошта: {{email}}</li>
+                    <li>Навички: {{skills}}</li>
+                    <li>
+                      <hr>
+                      <b>Проєкти:</b>
+                      {{#each projects}}
+                      <ul>
+                        <li>Назва: {{name}}</li>
+                        <li>Обов'язки: {{description}}</li>
+                        <li>Технології: {{technologies}}</li>
+                        <hr>
+                        <li><b>Співробітники:</b></li>
+                        {{#each team_members}}
+                        <ul>
+                          <li>Ім'я: {{name}}</li>
+                          <li>Посада: {{title}}</li>
+                        </ul> {{!-- продовження коду --}}
+                        {{/each}}
+                    </li>
+                  </ul>
+                  {{/each}}
+                </li>
+            </li>
+          </ul>
+          {{/each}}
+        </li>
+      </ul>
+    </li>
+    {{/each}}
+  </ul>
+  </li>
+  {{/each}}
+  </ul>
+  </li>
+  {{/each}}
+  </ul>
+  {{/each}}
+
+  {{/with}}
+</div>
