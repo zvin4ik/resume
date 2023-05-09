@@ -1,0 +1,79 @@
+<div>
+  {{#with web}} {{!-- 1--}}
+  <h1>Мови програмування</h1>
+  <br>
+  <section>
+    {{#each languages}} {{!-- 2--}}
+    <div>
+      <hr>
+      <h2><strong>{{name}}</strong></h2>
+      <ul>
+        <li><b>Версія:</b> {{version}}</li>
+        <li><b>Опис:</b> {{description}}</li>
+      </ul>
+    </div>
+
+    {{#each elements}} {{!-- 3--}}
+    <div>
+      <h3>Елемент:</h3>
+      <ul>
+        <li><b>Назва:</b> {{name}}</li>
+        <li><b>Опис:</b> {{description}}</li>
+      </ul>
+    </div>
+
+    {{#each attributes}} {{!-- 4--}}
+    <h4>Атрибут:</h4>
+    <div>
+      <ul>
+        <li><b>Назва:</b> {{name}}</li>
+        <li><b>Опис:</b> {{description}}</li>
+      </ul>
+    </div>
+    {{/each}} {{!-- 4--}}
+    {{/each}} {{!-- 3--}}
+
+    {{#each properties}} {{!-- 5--}}
+    <div>
+      <h3>Параметри:</h3>
+      <ul>
+        <li><b>Назва:</b> {{name}}</li>
+        <li><b>Опис:</b> {{description}}</li>
+      </ul>
+    </div>
+
+    {{#each values}} {{!-- 6--}}
+    <div>
+      <h4>Значення:</h4>
+      <ul>
+        <li><b>Назва:</b> {{value}}</li>
+        <li><b>Опис:</b> {{description}}</li>
+      </ul>
+    </div>
+    {{/each}} {{!-- 6--}}
+    {{/each}} {{!-- 5--}}
+
+    {{#each functions}} {{!-- 7--}}
+    <div>
+      <h3>Функції:</h3>
+      <ul>
+        <li><b>Назва:</b> {{name}}</li>
+        <li><b>Опис:</b> {{description}}</li>
+      </ul>
+    </div>
+    {{#each parameters}} {{!-- 8--}}
+    <div>
+      <h4>Параметри:</h4>
+      <ul>
+        <li><b>Назва:</b> {{name}}</li>
+        <li><b>Тип:</b> {{type}}</li>
+        <li><b>Опис:</b> {{description}}</li>
+      </ul>
+    </div>
+    {{/each}}{{!-- 8--}}
+    {{/each}} {{!-- 7--}}
+
+    {{/each}} {{!-- 2--}}
+    {{/with}} {{!-- 1--}}
+  </section>
+</div>
