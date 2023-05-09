@@ -1,0 +1,90 @@
+<div>
+  {{#with program}}
+  <h1>"{{excursion.name}}"</h1>
+  <h2>Де? - {{excursion.location.city}}, {{excursion.location.country}}.</h2>
+  <h2>Коли? - {{excursion.date}}.</h2>
+  <br>
+  <hr>
+  <hr>
+  <section>
+    {{#each excursion.program}}
+    <div>
+      <p><b>Програма:</b></p>
+      <ul>
+        <li>Назва: {{name}}</li>
+        <li>Тип: {{type}}</li>
+        <li>Тривалість: {{duration}}</li>
+      </ul>
+    </div>
+
+    <div>
+      <p><b>Деталі програми:</b></p>
+      {{#with details.museum}}
+      <ul>
+        <li>Місце: {{name}}</li>
+        <li>Адреса: {{location.address}}</li>
+        <li>Місто: {{location.city}}</li>
+        <li>Країна: {{location.country}}</li>
+      </ul>
+    </div>
+
+    <div>
+      {{#each exhibits}}
+      <p><b>Експонати:</b></p>
+      <ul>
+        <li>Назва: {{name}}</li>
+        <li>Художник:
+          {{#if artist}}
+          {{artist}}
+          {{else}}
+          {{/if}}
+        </li>
+        <li>Опис: {{description}}</li>
+        {{#if audio_guide}}
+        <em>Аудіо супровід</em>
+        {{else}}
+        {{/if}}
+      </ul>
+      {{/each}}
+    </div>
+    {{/with}}
+
+    <div>
+      {{#with details.venue}}
+      <ul>
+        <li>Місце: {{name}}</li>
+        <li>Адреса: {{location.address}}</li>
+        <li>Місто: {{location.city}}</li>
+        <li>Країна: {{location.country}}</li>
+      </ul>
+      {{/with}}
+    </div>
+
+    {{#if details.performers}}
+    <div>
+      <p><b>Виконавці:</b> </p>
+      {{#each details.performers}}
+      <ul>
+        <li>{{name}}</li>
+        <li>{{type}}</li>
+      </ul>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    <div>
+      <p><b>Ведучий:</b></p>
+      {{#with details.guide}}
+      <ul>
+        <li>Гід: {{name}}</li>
+        <li>Мова: {{language}}</li>
+        <li>Рейтинг: {{rating}}</li>
+      </ul>
+      {{/with}}
+    </div>
+    <hr>
+    <hr>
+    {{/each}}
+  </section>
+  {{/with}}
+</div>
