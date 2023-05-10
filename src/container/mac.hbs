@@ -1,0 +1,219 @@
+<div>
+	<br>
+	<div>
+		<h1><span class="badge bg-primary">{{name}}</span></h1>
+		<h2><span class="badge bg-success">{{description}}</span></h2>
+		<h3><span class="badge bg-danger">{{price}}</span></h3>
+		<h3><span class="badge bg-info">{{category}}</span></h3>
+	</div>
+	<hr>
+	<br>
+
+	<section>
+		{{#with features}}
+		<div class="accordion" id="accordionExample">
+
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+						aria-expanded="true" aria-controls="collapseOne">
+						<b>Процесор</b>
+					</button>
+				</h2>
+				<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						{{#with processor}}
+						<ul>
+							<li>Бренд: {{brand}}</li>
+							<li>Модель: {{model}}</li>
+							<li>Частова: {{speed}}</li>
+							<li>К-сть ядер: {{cores}}</li>
+							<li>Кеш: {{cache}}</li>
+						</ul>
+						{{/with}}
+					</div>
+				</div>
+			</div>
+
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						<b>Пам'ять</b>
+					</button>
+				</h2>
+				<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						{{#with memory}}
+						<ul>
+							<li>Тип: {{type}}</li>
+							<li>Об'єм: {{size}}</li>
+							<li>Частота: {{speed}}</li>
+						</ul>
+						{{/with}}
+					</div>
+				</div>
+			</div>
+
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						<b>Сховище</b>
+					</button>
+				</h2>
+				<div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						{{#with storage}}
+						<ul>
+							<li>Тип: {{type}}</li>
+							<li>Об'єм: {{size}}</li>
+						</ul>
+						{{/with}}
+					</div>
+				</div>
+			</div>
+
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+						<b>Екран</b>
+					</button>
+				</h2>
+				<div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						{{#with display}}
+						<ul>
+							<li>Розмір: {{size}}</li>
+							<li>Розширення: {{resolution}}</li>
+							<li>Тип матриці: {{technology}}</li>
+							<li>Колір: {{color_space}}</li>
+							<li>Яскравість: {{brightness}}</li>
+							<li>Частота: {{refresh_rate}}</li>
+						</ul>
+						{{/with}}
+					</div>
+				</div>
+			</div>
+
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+						<b>Графіка</b>
+					</button>
+				</h2>
+				<div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						{{#with graphics}}
+						<ul>
+							<li>Бренд: {{brand}}</li>
+							<li>Модель: {{model}}</li>
+							<li>Тип пам'яті: {{memory}}</li>
+						</ul>
+						{{/with}}
+					</div>
+				</div>
+			</div>
+
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+						<b>Роз'єми</b>
+					</button>
+				</h2>
+				<div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						{{#each ports}}
+
+						<ul>
+							<li>Тип: {{type}}</li>
+							<li>Кількість: {{count}}</li>
+							{{#if features}}
+							<li>Особливості:
+								{{#with features}}
+								<ul>
+									<li>{{[0]}}</li>
+									<li>{{[1]}}</li>
+									<li>{{[2]}}</li>
+									<li>{{[3]}}</li>
+								</ul>
+								{{/with}}
+								{{/if}}
+						</ul>
+						{{/each}}
+					</div>
+				</div>
+			</div>
+
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+						<b>Батарея</b>
+					</button>
+				</h2>
+				<div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						{{#with battery}}
+						<ul>
+							<li>Тип: {{type}}</li>
+							<li>Ємність: {{capacity}}</li>
+							<li>Час роботи: {{life}}</li>
+						</ul>
+						{{/with}}
+					</div>
+				</div>
+			</div>
+
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+						<b>Розмір</b>
+					</button>
+				</h2>
+				<div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						<span>Вага: {{weight}}</span>
+						{{#with dimensions}}
+						<ul>
+							<span>Габарити:</span>
+							<li>Висота: {{height}}</li>
+							<li>Ширина: {{width}}</li>
+							<li>Глибина: {{depth}}</li>
+						</ul>
+						{{/with}}
+					</div>
+				</div>
+			</div>
+
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+						<b>Операційна система та Аксесуари</b>
+					</button>
+				</h2>
+				<div id="collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						<span>Операційна система: {{operating_system}}</span>
+						<br>
+						<em>Аксесуари</em>
+						<ul>
+							{{#each accessories}}
+							<li>Назва: {{name}}</li>
+							<li>Ціна: {{price}}</li>
+							{{/each}}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{/with}}
+	</section>
+	<br>
+	<hr>
+</div>
