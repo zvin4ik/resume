@@ -1,0 +1,249 @@
+<div>
+  <h1><span class="badge bg-secondary">{{make}} {{model}}</span></h1>
+  <h2> <span class="badge bg-secondary">{{year}}, {{color}}</span></h2>
+
+  <section>
+    <h3>Особливості</h3>
+    {{#with features}}
+    <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
+        aria-expanded="false" aria-controls="collapseWidthExample">
+        <i>Інтер'єр:</i>
+      </button>
+    </p>
+    <div style="min-height: 120px;">
+      <div class="collapse collapse" id="collapseWidthExample">
+        <div class="card card-body" style="width: 300px;">
+          <div>
+            {{#with interior.seats}}
+            <span>Сидіння:</span>
+            <ul>
+              <li>Матеріал: {{material}}</li>
+              <li>Колір: {{color}}</li>
+              <li>Підголовник: {{#if heated}} Так {{/if}}</li>
+              <li>Вентильований: {{#if ventilated}} Так {{/if}}</li>
+            </ul>
+            {{/with}}
+          </div>
+          <hr>
+          <div>
+            {{#with interior.dashboard}}
+            <span>Передня панель:</span>
+            <ul>
+              <li>Матеріал: {{material}}</li>
+              <li>Колір: {{color}}</li>
+              <li>Дисплей: {{display.type}},{{display.size}}, {{display.resolution}}, {{#if display.touchscreen}} Так
+                {{/if}}
+              </li>
+            </ul>
+            {{/with}}
+          </div>
+          <hr>
+          <div>
+            {{#with interior.audio}}
+            <span>Аудіо система:</span>
+            <ul>
+              <li>Система: {{system}}</li>
+              <li>Колонок: {{speakers}}</li>
+              <li>Підсилювач: {{#if subwoofer}} Так {{/if}}</li>
+              <li>Блутуз: {{#if bluetooth}} Так {{/if}}</li>
+              <li>USB: {{#if USB}} Так {{/if}}</li>
+            </ul>
+            {{/with}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
+        aria-expanded="false" aria-controls="collapseWidthExample">
+        <i>Ходова частина:</i>
+      </button>
+    </p>
+    <div style="min-height: 120px;">
+      <div class="collapse collapse" id="collapseWidthExample">
+        <div class="card card-body" style="width: 300px;">
+          <div>
+            {{#with exterior.wheels}}
+            <span>Колеса:</span>
+            <ul>
+              <li>Розмір: {{size}}</li>
+              <li>Тип: {{type}}</li>
+              <li>Колір: {{color}}</li>
+            </ul>
+            {{/with}}
+          </div>
+
+          <hr>
+
+          <div>
+            {{#with exterior.headlights}}
+            <span>Фари:</span>
+            <ul>
+              <li>Тип: {{type}}</li>
+              <li>Яскравість: {{brightness}}</li>
+              <li>Автоматика: {{#if automatic}} Так {{/if}}</li>
+            </ul>
+            {{/with}}
+          </div>
+
+          <hr>
+
+          <div>
+            {{#with exterior.sunroof}}
+            <span>Люк:</span>
+            <ul>
+              <li>Тип: {{type}}</li>
+              <li>Розмір: {{size}}</li>
+              <li>Автоматика: {{#if automatic}} Так {{/if}}</li>
+            </ul>
+            {{/with}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
+        aria-expanded="false" aria-controls="collapseWidthExample">
+        <i>Безпека:</i>
+      </button>
+    </p>
+    <div style="min-height: 120px;">
+      <div class="collapse collapse" id="collapseWidthExample">
+        <div class="card card-body" style="width: 300px;">
+          <div>
+            {{#with safety.airbags}}
+            <span>Подушки безпеки:</span>
+            <ul>
+              <li>Передні: {{front}}</li>
+              <li>Бокові: {{side}}</li>
+              <li>Колінні: {{knee}}</li>
+              <li>Задні: {{rear}}</li>
+            </ul>
+            {{/with}}
+          </div>
+          <hr>
+          <div>
+            {{#with safety.assistance}}
+            <span>Допоміжні системи:</span>
+            <ul>
+              <li>Моніторинг сліпих зон: {{#if blind_spot_monitoring}} Так {{/if}}</li>
+              <li>Попередження про перехресний рух ззаду: {{#if rear_cross_traffic_alert}} Так {{/if}}</li>
+              <li>Попередження про виїзд зі смуги руху: {{#if lane_departure_warning}} Так {{/if}}</li>
+              <li>Адаптивний круїз-контроль: {{#if adaptive_cruise_control}} Так {{/if}}</li>
+              <li>Попередження зіткнення: {{#if collision_warning}} Так {{/if}}</li>
+            </ul>
+            {{/with}}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/with}}
+
+    <hr>
+    <hr>
+
+    <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
+        aria-expanded="false" aria-controls="collapseWidthExample">
+        <i>Двигун:</i>
+      </button>
+    </p>
+    <div style="min-height: 120px;">
+      <div class="collapse collapse" id="collapseWidthExample">
+        <div class="card card-body" style="width: 300px;">
+          {{#with engine}}
+          <ul>
+            <li>Тип: {{type}}</li>
+            <li>Об'єм: {{displacement}}</li>
+            <li>Кінських сил: {{horsepower}}</li>
+            <li>Крутний момент: {{torque}}</li>
+            <li>Коробка передач: {{transmission.type}}</li>
+            <li>К-сть передач: {{transmission.gears}}</li>
+          </ul>
+          {{/with}}
+        </div>
+      </div>
+    </div>
+    <hr>
+    <hr>
+    <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
+        aria-expanded="false" aria-controls="collapseWidthExample">
+        <i>Розхід пального:</i>
+      </button>
+    </p>
+    <div style="min-height: 120px;">
+      <div class="collapse collapse" id="collapseWidthExample">
+        <div class="card card-body" style="width: 300px;">
+          {{#with engine}}
+          <ul>
+            <li>Тип: {{type}}</li>
+            <li>Об'єм: {{displacement}}</li>
+            <li>Кінських сил: {{horsepower}}</li>
+            <li>Крутний момент: {{torque}}</li>
+            <li>Коробка передач: {{transmission.type}}</li>
+            <li>К-сть передач: {{transmission.gears}}</li>
+          </ul>
+          {{/with}}
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <hr>
+
+    <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
+        aria-expanded="false" aria-controls="collapseWidthExample">
+        <i>Розхід пального:</i>
+      </button>
+    </p>
+    <div style="min-height: 120px;">
+      <div class="collapse collapse" id="collapseWidthExample">
+        <div class="card card-body" style="width: 300px;">
+          {{#with fuel_economy}}
+          <ul>
+            <li>Місто: {{city}}</li>
+            <li>Траса: {{highway}}</li>
+            <li>Комбінований: {{combined}}</li>
+          </ul>
+          {{/with}}
+        </div>
+      </div>
+    </div>
+    <hr>
+    <hr>
+    <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
+        aria-expanded="false" aria-controls="collapseWidthExample">
+        <i>Ціна:</i>
+      </button>
+    </p>
+    <div style="min-height: 120px;">
+      <div class="collapse collapse" id="collapseWidthExample">
+        <div class="card card-body" style="width: 300px;">
+          {{#with price}}
+          <ul>
+            <li>Базова: {{base}}</li>
+            <li>Призначення: {{destination}}</li>
+            <ul><span>Додаткова комплектація:</span>
+              <li>Навігація: {{options.navigation}}</li>
+              <li>Люк: {{options.moonroof}}</li>
+              <li>Фарба: {{options.premium_paint}}</li>
+            </ul>
+            <li>Загальна: {{total}}</li>
+          </ul>
+          {{/with}}
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>
