@@ -8,15 +8,17 @@
   <section>
     <div>
       <p><b>Типи данних:</b></p>
+      {{#each types}}
       <ul>
-        <li><button type="button" class="btn btn-primary">{{types.[0]}}</button></li>
-        <li><button type="button" class="btn btn-secondary">{{types.[1]}}</button></li>
+        <li><button type="button" class="btn btn-info">{{this}}</button></li>
+        {{!-- <li><button type="button" class="btn btn-secondary">{{types.[1]}}</button></li>
         <li><button type="button" class="btn btn-success">{{types.[2]}}</button></li>
         <li><button type="button" class="btn btn-danger">{{types.[3]}}</button></li>
         <li><button type="button" class="btn btn-warning">{{types.[4]}}</button></li>
         <li><button type="button" class="btn btn-info">{{types.[5]}}</button></li>
-        <li><button type="button" class="btn btn-light">{{types.[6]}}</button></li>
+        <li><button type="button" class="btn btn-light">{{types.[6]}}</button></li> --}}
       </ul>
+      {{/each}}
     </div>
     <br>
     <hr>
@@ -65,44 +67,50 @@
     <br>
     <div>
       <p><b>Особливості:</b></p>
+      {{#each features}}
       <ul>
-        <li><span class="badge rounded-pill text-bg-primary">{{features.[0]}}</span></li>
-        <li><span class="badge rounded-pill text-bg-secondary">{{features.[1]}}</span></li>
+        <li><span class="badge rounded-pill text-bg-warning">{{this}}</span></li>
+        {{!-- <li><span class="badge rounded-pill text-bg-secondary">{{features.[1]}}</span></li>
         <li><span class="badge rounded-pill text-bg-success">{{features.[2]}}</span></li>
         <li><span class="badge rounded-pill text-bg-danger">{{features.[3]}}</span></li>
         <li><span class="badge rounded-pill text-bg-warning">{{features.[4]}}</span></li>
-        <li><span class="badge rounded-pill text-bg-info">{{features.[5]}}</span></li>
+        <li><span class="badge rounded-pill text-bg-info">{{features.[5]}}</span></li> --}}
       </ul>
+      {{/each}}
     </div>
     <br>
     <hr>
     <br>
     <div>
       <p><b>Біблоітеки:</b></p>
+      {{#each libraries}}
       <ol class="list-group list-group-numbered">
-        <li class="list-group-item">{{libraries.[0]}}</li>
-        <li class="list-group-item">{{libraries.[1]}}</li>
+        <li class="list-group-item">{{this}}</li>
+        {{!-- <li class="list-group-item">{{libraries.[1]}}</li>
         <li class="list-group-item">{{libraries.[2]}}</li>
         <li class="list-group-item">{{libraries.[3]}}</li>
         <li class="list-group-item">{{libraries.[4]}}</li>
         <li class="list-group-item">{{libraries.[5]}}</li>
         <li class="list-group-item">{{libraries.[6]}}</li>
-        <li class="list-group-item">{{libraries.[7]}}</li>
+        <li class="list-group-item">{{libraries.[7]}}</li> --}}
       </ol>
+      {{/each}}
     </div>
     <br>
     <hr>
     <br>
     <div>
       <p><b>Інструменти:</b></p>
-      <button type="button" class="btn btn-outline-primary">{{tools.[0]}}</button>
-      <button type="button" class="btn btn-outline-secondary">{{tools.[1]}}</button>
+      {{#each tools}}
+      <button type="button" class="btn btn-outline-success">{{this}}</button>
+      {{!-- <button type="button" class="btn btn-outline-secondary">{{tools.[1]}}</button>
       <button type="button" class="btn btn-outline-success">{{tools.[2]}}</button>
       <button type="button" class="btn btn-outline-danger">{{tools.[3]}}</button>
       <button type="button" class="btn btn-outline-warning">{{tools.[4]}}</button>
       <button type="button" class="btn btn-outline-info">{{tools.[5]}}</button>
       <button type="button" class="btn btn-outline-light">{{tools.[6]}}</button>
-      <button type="button" class="btn btn-outline-dark">{{tools.[7]}}</button>
+      <button type="button" class="btn btn-outline-dark">{{tools.[7]}}</button> --}}
+      {{/each}}
     </div>
     <br>
     <hr>
