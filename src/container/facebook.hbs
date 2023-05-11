@@ -6,105 +6,74 @@
 	<section>
 		<div>
 			{{#each users}}
-			<ul class="list-group list-group-horizontal-xl">
-				<li class="list-group-item">
-					<div>
-						<span>Користувач:</span>
+			<div>
+				<div class="badge text-bg-primary">Ім'я: <b>{{name}}</b></div>
+				<ul>
+					<li>Id: {{id}}</li>
+					<li>Стать: {{gender}}</li>
+					<li>Вік: {{age}}</li>
+					<div class="badge text-bg-success">Друзі:</div>
+					{{#each friends}}
+					<ul>
+						<div>Ім'я: <b>{{name}}</b></div>
+						<li>Id: {{id}}</li>
+						<li>Стать: {{gender}}</li>
+						<li>Вік: {{age}}</li>
 						<ul>
-							Id: {{id}}
-							<br>
-							Ім'я: {{name}}
-							<br>
-							Стать: {{gender}}
-							<br>
-							Вік: {{age}}
+							{{#each mutual_friends}}
+							<div class="badge text-bg-warning">Друзі друзів:</div>
+							<div>Ім'я: <b>{{name}}</b></div>
+							<li>Id: {{id}}</li>
+							<li>Стать: {{gender}}</li>
+							<li>Вік: {{age}}</li>
+							{{/each}}
 						</ul>
-					</div>
-				</li>
-				<li class="list-group-item">
-					<div>
-						{{#each friends}}
-						<span>Друзі:</span>
 						<ul>
-							Id: {{id}}
-							<br>
-							Ім'я: {{name}}
-							<br>
-							Стать: {{gender}}
-							<br>
-							Вік: {{age}}
+							{{#each groups}}
+							<div class="badge text-bg-danger">Групи друзів:</div>
+							<ul>
+								<div>Ім'я: <b>{{name}}</b></div>
+								<li>Id: {{id}}</li>
+								<li>Опис: {{description}}</li>
+							</ul>
+							{{/each}}
 						</ul>
-						{{/each}}
-					</div>
-				</li>
-				<li class="list-group-item">
-					<div>
-						{{#each friends}}
-						{{#each mutual_friends}}
-						<span>Друзі друзів:</span>
-						<ul>
-							Id: {{id}}
-							<br>
-							Ім'я: {{name}}
-							<br>
-							Стать: {{gender}}
-							<br>
-							Вік: {{age}}
-						</ul>
-						{{/each}}
-						{{/each}}
-					</div>
-				</li>
-				<li class="list-group-item">
-					<div>
-						{{#each groups}}
-						<span>Групи:</span>
-						<ul>
-							Id: {{id}}
-							<br>
-							Ім'я: {{name}}
-							<br>
-							Опис: {{description}}
-						</ul>
-						{{/each}}
-					</div>
-				</li>
-				<li class="list-group-item">
-					<div>
-						{{#each friends}}
-						{{#each groups}}
-						<span>Групи друзів:</span>
-						<ul>
-							Id: {{id}}
-							<br>
-							Ім'я: {{name}}
-							<br>
-							Опис: {{description}}
-						</ul>
-						{{/each}}
-						{{/each}}
-					</div>
-				</li>
-				<li class="list-group-item">
-					<div>
-						{{#each groups}}
-						{{#each members}}
-						<span>Підписники груп:</span>
-						<ul>
-							Id: {{id}}
-							<br>
-							Ім'я: {{name}}
-							<br>
-							Стать: {{gender}}
-							<br>
-							Вік: {{age}}
-						</ul>
-						{{/each}}
-						{{/each}}
-					</div>
-				</li>
-				<br>
-			</ul>
+					</ul>
+					{{/each}}
+				</ul>
+			</div>
+
+			<div>
+				{{#each groups}}
+				<div class="badge text-bg-info">Групи:</div>
+				<ul>
+					<li>Id: {{id}}</li>
+					<li>Ім'я: {{name}}</li>
+					<li>Опис: {{description}}</li>
+					{{#each members}}
+					<div class="badge text-bg-dark">Підписники груп:</div>
+					<ul>
+						<div>Ім'я: {{name}}</div>
+						<li>Id: {{id}}</li>
+						<li>Стать: {{gender}}</li>
+						<li>Вік: {{age}}</li>
+					</ul>
+					{{/each}}
+				</ul>
+				{{/each}}
+			</div>
+
+
+			<div>
+				{{#each friends}}
+
+				{{/each}}
+			</div>
+
+
+
+
+
 			{{/each}}
 		</div>
 
