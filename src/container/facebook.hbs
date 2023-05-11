@@ -1,0 +1,137 @@
+<div>
+	<span class="badge text-bg-primary">
+		<h1>{{name}}</h1>
+	</span>
+
+	<section>
+		<div>
+			{{#each users}}
+			<ul class="list-group list-group-horizontal-xl">
+				<li class="list-group-item">
+					<div>
+						<span>Користувач:</span>
+						<ul>
+							Id: {{id}}
+							<br>
+							Ім'я: {{name}}
+							<br>
+							Стать: {{gender}}
+							<br>
+							Вік: {{age}}
+						</ul>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div>
+						{{#each friends}}
+						<span>Друзі:</span>
+						<ul>
+							Id: {{id}}
+							<br>
+							Ім'я: {{name}}
+							<br>
+							Стать: {{gender}}
+							<br>
+							Вік: {{age}}
+						</ul>
+						{{/each}}
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div>
+						{{#each friends}}
+						{{#each mutual_friends}}
+						<span>Друзі друзів:</span>
+						<ul>
+							Id: {{id}}
+							<br>
+							Ім'я: {{name}}
+							<br>
+							Стать: {{gender}}
+							<br>
+							Вік: {{age}}
+						</ul>
+						{{/each}}
+						{{/each}}
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div>
+						{{#each groups}}
+						<span>Групи:</span>
+						<ul>
+							Id: {{id}}
+							<br>
+							Ім'я: {{name}}
+							<br>
+							Опис: {{description}}
+						</ul>
+						{{/each}}
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div>
+						{{#each friends}}
+						{{#each groups}}
+						<span>Групи друзів:</span>
+						<ul>
+							Id: {{id}}
+							<br>
+							Ім'я: {{name}}
+							<br>
+							Опис: {{description}}
+						</ul>
+						{{/each}}
+						{{/each}}
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div>
+						{{#each groups}}
+						{{#each members}}
+						<span>Підписники груп:</span>
+						<ul>
+							Id: {{id}}
+							<br>
+							Ім'я: {{name}}
+							<br>
+							Стать: {{gender}}
+							<br>
+							Вік: {{age}}
+						</ul>
+						{{/each}}
+						{{/each}}
+					</div>
+				</li>
+				<br>
+			</ul>
+			{{/each}}
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</section>
+</div>
