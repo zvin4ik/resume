@@ -127,20 +127,19 @@
 				<div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
 					<div class="accordion-body">
 						{{#each ports}}
-
 						<ul>
 							<li>Тип: {{type}}</li>
 							<li>Кількість: {{count}}</li>
 							{{#if features}}
 							<li>Особливості:
-								{{#with features}}
+								{{#each features}}
 								<ul>
-									<li>{{[0]}}</li>
-									<li>{{[1]}}</li>
+									<li>{{this}}</li>
+									{{!-- <li>{{[1]}}</li>
 									<li>{{[2]}}</li>
-									<li>{{[3]}}</li>
+									<li>{{[3]}}</li> --}}
 								</ul>
-								{{/with}}
+								{{/each}}
 								{{/if}}
 						</ul>
 						{{/each}}
