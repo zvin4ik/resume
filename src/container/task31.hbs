@@ -5,7 +5,7 @@
 
 		<div class="col-8">
 			{{#each links}}
-			<a href="{{href}}" class="btn btn-link">{{text}}</a>
+			<a href="{{href}}"><button type="button" class="btn btn-link me-5">{{text}}</button></a>
 			{{/each}}
 		</div>
 
@@ -169,7 +169,7 @@
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item">
 					{{#each navigation}}
-					<a href="{{href}}"><button type="button" class="btn btn-link">{{text}}</button></a>
+					<a href="{{href}}"><button type="button" class="btn btn-link my-1">{{text}}</button></a>
 					{{/each}}
 				</li>
 			</ul>
@@ -179,8 +179,7 @@
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item">
 					{{#each socialMedia}}
-					<a href="{{link}}" class="mb-3 list-item"><button type="button"
-							class="btn btn-outline-dark">{{name}}</button></a>
+					<a href="{{link}}"><button type="button" class="btn btn-outline-dark my-1">{{name}}</button></a>
 					{{/each}}
 				</li>
 			</ul>
@@ -190,7 +189,7 @@
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item">
 					{{#each partners}}
-					<a href="{{link}}"><button type="button" class="btn btn-outline-info">{{name}}</button></a>
+					<a href="{{link}}"><button type="button" class="btn btn-outline-info my-1">{{name}}</button></a>
 					{{/each}}
 				</li>
 			</ul>
