@@ -16,19 +16,23 @@
 	<section class="row">
 		{{#with newsBlock}}
 		<h2 class="text-center">{{title}}</h2>
-		{{#each cards}}
-		<div class="card card col-3 p-1 mt-5 me-1 text-bg-dark">
-			<div class="card-header">{{title}}
-				{{#if isTop}}
-				<span class="badge text-bg-success">Нова</span>
-				{{/if}}
-				{{#if isNew}}
-				<span class="badge text-bg-danger">Топ</span>
-				{{/if}}
+		<div class="row">
+			{{#each cards}}
+			<div class="col-3 p-0 py-1 px-1">
+				<div class="card text-bg-dark">
+					<div class="card-header p">{{title}}
+						{{#if isTop}}
+						<span class="badge text-bg-success">Нова</span>
+						{{/if}}
+						{{#if isNew}}
+						<span class="badge text-bg-danger">Топ</span>
+						{{/if}}
+					</div>
+					<p>{{description}}</p>
+				</div>
 			</div>
-			<p>{{description}}</p>
+			{{/each}}
 		</div>
-		{{/each}}
 		{{/with}}
 	</section>
 	<hr>
