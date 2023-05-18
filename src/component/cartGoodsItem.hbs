@@ -1,0 +1,32 @@
+<div class="row m-0"> {{! картки товарів}}
+	{{#each goodsBlock}}
+	<div class="card p-2 mb-2">
+		<div class="row">
+			<div class="col-2 m-0">
+				<img src="{{image}}" alt="{{name}}">
+			</div>
+			<div class="col-5 ps-0 pt-2">
+				<h4>{{name}}</h4>
+				<div class="form-text">{{description}}</div>
+			</div>
+			<div class="col-2 pt-4">
+				{{#with price}}
+				<div>{{title}}:</div>
+				<div>{{value}}</div>
+				{{/with}}
+			</div>
+			<div class="col-1 pt-5">{{amount}}</div>
+			<div class="col-2 pt-2">
+				{{#each buttons}}
+				{{#if isPrimary}}
+				<button class="btn btn-primary mb-3">{{text}}</button>
+				{{/if}}
+				{{#if isDanger}}
+				<button class="btn btn-outline-danger">{{text}}</button>
+				{{/if}}
+				{{/each}}
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</div>

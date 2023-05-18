@@ -1,0 +1,123 @@
+<main>
+	<section>
+		<div class="row">
+			{{#with navigation}}
+			<div class="card">
+				<ul class="nav col-12">
+					{{#each links}}
+					<li class="nav-item">
+						<a class="nav-link {{#if @last}}disabled{{/if}}" href="{{href}}" target="_blank">{{text}}</a>
+					</li>
+					{{/each}}
+				</ul>
+				{{/with}}
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="mt-5 mb-5"> {{! кошик}}
+			{{#with header}}
+			<h1>{{title}}</h1>
+			<div>
+				{{#with button}}
+				<a href="{{link}}"><button type="button" class="btn btn-outline-secondary">{{text}}</button></a>
+				{{/with}}
+			</div>
+			{{/with}}
+		</div>
+
+		<hr>
+
+		{{> cartGoodsItem}}
+
+		<hr>
+
+		<div>
+			{{#with total}} {{! вартість замовлення}}
+			<h4>{{title}}</h4>
+			<h2>{{amount}}</h2>
+			<div>{{delivery}}</div>
+			<div class="col-3 mt-3">
+				{{#each buttons}}
+				{{#if isSuccess}}
+				<button type="button" class="btn btn-success mb-3">{{text}}</button>
+				{{/if}}
+				{{#if isOutline}}
+				<button type="button" class="btn btn-outline-success">{{text}}</button>
+				{{/if}}
+				{{/each}}
+			</div>
+			{{/with}}
+		</div>
+
+		<hr>
+
+		<div>
+			{{#with goodsOtherBlock}} {{! картки}}
+			<h3 class="text-center">{{title}}</h3>
+			<div class="row">
+				{{#each cards}}
+				<div class="col-4">
+					<div class="card">
+						<img class="card-img-top" src="{{image}}" alt="{{title}}">
+						<div class="card-body">
+							<h5 class="card-title">{{title}}
+								{{#if isHot}}
+								<span class="badge rounded-pill text-bg-primary">Primary</span>
+								{{/if}}
+								{{#if idNew}}
+								<span class="badge rounded-pill text-bg-warning">Warning</span>
+								{{/if}}
+							</h5>
+							<p>{{description}}</p>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+			{{/with}}
+		</div>
+
+		<hr>
+
+		<div>
+			{{#with subscribe}} {{! підписка}}
+			<div class="card text-bg-secondary">
+				<div class="card-body">
+					<h2 class="card-title">{{header}}</h2>
+					<p>{{description}}</p>
+					<div class="row">
+						<div class="col-3">
+							{{#each buttons}}
+							<a href="{{link}}" target="_blank">
+								<button class="btn btn-primary mt-3">{{text}}</button>
+							</a>
+							{{/each}}
+						</div>
+					</div>
+				</div>
+
+			</div>
+			{{/with}}
+		</div>
+
+		<hr>
+
+		<div class="row m-0 p-0"> {{! навігація}}
+			{{#each footer}}
+			<div class="col-2 m-0 p-0">
+				<div class="row">
+					{{#each this}}
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="{{link}}" target="_blank">{{text}}</a>
+						</li>
+					</ul>
+					{{/each}}
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</section>
+</main>
