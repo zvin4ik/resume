@@ -1,0 +1,54 @@
+<div class="row col-8">
+	{{#each goodsList}}
+	<div class="col-6">
+		<div class="card">
+			<img src="{{img}}" class="card-img-top" alt="image">
+			<div class="card-body">
+				<div> {{! статус товару}}
+					{{#if isHot}}
+					<span class="badge rounded-pill text-bg-primary">Hot!</span>
+					{{/if}}
+					{{#if isNew}}
+					<span class="badge rounded-pill text-bg-warning">Нове</span>
+					{{/if}}
+				</div>
+				<div> {{! кнопка безкоштовної доставки}}
+					{{#if isFree}}
+					<button class="btn btn-success btn-sm mt-2">Безкоштовна доставка</button>
+					{{/if}}
+				</div>
+				<div>{{! кнопка швидкої доставки }}
+					{{#if isFast}}
+					<button class="btn btn-secondary btn-sm mt-2">Швидка доставка</button>
+					{{/if}}
+				</div>
+				<div>{{! ціна/відгуки/статус відправки}}
+					<h5 class="card-title mt-3">{{name}}</h5>
+					{{#with review}}
+					<p>{{amount}} {{text}}</p>
+					{{/with}}
+					<h4>{{price}}</h4>
+					<p class="card-text">{{delivery}}</p>
+				</div>
+				{{#each buttons}}
+				<div> {{! кнопки купівлі}}
+					{{#if isPrimary}}
+					<a href="{{link}}"><button class="btn btn-primary mt-2">{{text}}</button></a>
+					{{/if}}
+					{{#if isSecondary}}
+					<a href="{{link}}"><button class="btn btn-secondary mt-2">{{text}}</button></a>
+					{{/if}}
+				</div>
+				{{/each}}
+				<div class="mt-3"> {{! список}}
+					{{#each characteristics}}
+					<ul class="m-0">
+						<li>{{title}}: {{value}}</li>
+					</ul>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</div>
