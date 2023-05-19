@@ -1,0 +1,53 @@
+<div> {{! відгуки}}
+    {{#each reviewList}}
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="card">
+                <div class="pt-3 ps-3">
+                    {{#with title}}
+                    <h4>{{userName}}</h4>
+                    <p>{{caption}}</p>
+                    <p>{{date}}</p>
+                    {{/with}}
+                </div>
+                <hr>
+                {{#with reviewBody}}
+                <div class="ps-3 pb-3">
+                    {{#with seller}}
+                    <p>{{title}}: {{value}}</p>
+                    {{/with}}
+                    {{#with rating}}
+                    <p>{{title}}: {{value}}</p>
+                    {{/with}}
+                    {{#each text}}
+                    <p>{{this}}</p>
+                    {{/each}}
+                    {{#with advantages}}
+                    <p class="mb-0"><b>{{title}}:</b></p>
+                    <p>{{text}}</p>
+                    {{/with}}
+                    {{#with disadvantages}}
+                    <p class="mb-0"><b>{{title}}:</b></p>
+                    <p>{{text}}</p>
+                    {{/with}}
+                    <div>
+                        {{#each images}}
+                        <img src="{{this}}" alt="#">
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            {{#each coments}}
+            <div class="card mt-3 ms-5">
+                <div class="card-body">
+                    <p><b>{{userName}}</b></p>
+                    <p>{{date}}</p>
+                    <p>{{text}}</p>
+                </div>
+            </div>
+            {{/each}}
+            {{/with}}
+        </div>
+    </div>
+    {{/each}}
+</div>
