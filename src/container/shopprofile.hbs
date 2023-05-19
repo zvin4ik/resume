@@ -57,43 +57,8 @@
 
 		<hr>
 
-		<div>
-			{{#with purchase}}
-			{{#each itemList}}
-			<div class="row">
-				<div class="col-4">
-					<p>{{number}}</p>
-					<b>{{status}}</b>
-				</div>
+		{{> purchaseItem}}
 
-				<div class="col-2">
-					{{#with amount}}
-					<p>{{title}}</p>
-					<p>{{value}}</p>
-					{{/with}}
-				</div>
-
-				{{#each images}}
-				<div class="col-1 px-1">
-					<div class="row">
-						<img src="{{this}}" alt="image">
-					</div>
-				</div>
-				{{/each}}
-
-				<div class="col-2">
-					{{#with button}}
-					{{#if isPrimary}}
-					<a href="{{link}}"><button class="btn btn-primary">{{text}}</button></a>
-					{{/if}}
-					{{/with}}
-				</div>
-			</div>
-
-		</div>
-		<hr>
-		{{/each}}
-		{{/with}}
 		<hr class="mt-5">
 
 		<div>
