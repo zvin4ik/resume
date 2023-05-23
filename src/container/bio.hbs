@@ -1,155 +1,157 @@
-<div>
-  <h1>{{name}}</h1>
-  <hr>
-  <h2>Народився {{birthdate}} в {{birthplace}}</h2>
-  <h2>Помер {{deathdate}} в {{deathplace}}</h2>
-  <hr>
-  <h3>Національність: {{nationality}}</h3>
-  <h3>Область знань: {{occupation}}</h3>
-  <hr>
-  <h3>Відомий за:
-    <ol>
-      <li>{{known_for.[0]}}</li>
-      <li>{{known_for.[1]}}</li>
-      <li>{{known_for.[2]}}</li>
-      <li>{{known_for.[3]}}</li>
-    </ol>
-  </h3>
-  <br>
-  <hr>
-  <section>
-    <div>
-      <p><strong>Освіта</strong></p>
-      {{#each education}}
-      <ul>
-        <li>Звання: {{degree}}</li>
-        <li>Обалсть: {{field}}</li>
-        <li>Інститут: {{institution}}</li>
-        <li>Рік: {{year}}</li>
-      </ul>
-      {{/each}}
-    </div>
-    <hr>
-    <div>
-      <style>
-        table,
-        th,
-        td {
-          border: 1px solid black;
-          border-collapse: collapse;
-        }
-      </style>
-      {{!-- продовження коду --}}
-      <table>
-        <caption><strong>Публікації</strong></caption>
-        <tr>
-          <th>Назва</th>
-          <th>Рік</th>
-          <th>Публікація</th>
-        </tr>
-        {{#each notable_publications}}
-        <tr>
-          <td>{{title}}</td>
-          <td>{{year}}</td>
-          <td>{{publisher}}</td>
-        </tr>
+<main>
+  <div class="card">
+    <h1 class=" card-header text-center">{{name}}</h1>
+    <div class="card-body">
+      <h3>Народився: {{birthdate}} в {{birthplace}}</h3>
+      <h3>Помер: {{deathdate}} в {{deathplace}}</h3>
+      <hr>
+      <div class="text-end">
+        <h4>Національність: {{nationality}}</h4>
+        <h4>Область знань: {{occupation}}</h4>
+      </div>
+      <hr>
+      <h4>Відомий за:
+        <ol>
+          <li>{{known_for.[0]}}</li>
+          <li>{{known_for.[1]}}</li>
+          <li>{{known_for.[2]}}</li>
+          <li>{{known_for.[3]}}</li>
+        </ol>
+      </h4>
+      <hr>
+      <div>
+        <div>
+          <p><strong>Освіта</strong></p>
+          {{#each education}}
+          <ul>
+            <li>Звання: {{degree}}</li>
+            <li>Обалсть: {{field}}</li>
+            <li>Інститут: {{institution}}</li>
+            <li>Рік: {{year}}</li>
+          </ul>
+          {{/each}}
+        </div>
+        <hr>
+        <div class="text-center">
+          <style>
+            table,
+            th,
+            td {
+              border: 1px solid black;
+              border-collapse: collapse;
+            }
+          </style>
+          {{!-- продовження коду --}}
+          <table class="table table-info table-hover">
+            <h5>Публікації</h5>
+            <tr>
+              <th>Назва</th>
+              <th>Рік</th>
+              <th>Публікація</th>
+            </tr>
+            {{#each notable_publications}}
+            <tr>
+              <td>{{title}}</td>
+              <td>{{year}}</td>
+              <td>{{publisher}}</td>
+            </tr>
+            {{/each}}
+          </table>
+        </div>
+        <hr>
+        <div class="text-center">
+          <table class="table table-warning table-hover">
+            <h5>Шлюб</h5>
+            <tr>
+              <th>Ім'я</th>
+              <th>Відносини</th>
+              <th>Рік</th>
+            </tr>
+            {{#each partners}}
+            <tr>
+              <td>{{name}}</td>
+              <td>{{relationship}}</td>
+              <td>{{years}}</td>
+            </tr>
+            {{/each}}
+          </table>
+        </div>
+        <hr>
+        <div>
+          <p><strong>Awards</strong></p>
+          {{#each awards}} {{!-- продовження коду --}}
+          <ul>
+            <li>Назва: <b>{{title}}</b></li>
+            <li>Рік: <b>{{year}}</b></li>
+            <li>Опис: <b>{{description}}</b></li>
+          </ul>
+          {{/each}}
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-6">
+          <div class="card pb-4">
+            <div class="card-body">
+              <p><strong>Цікавився:</strong></p>
+              <ul>
+                <li>{{influences.[0]}}</li>
+                <li>{{influences.[1]}}</li>
+                <li>{{influences.[2]}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <div class="card-body">
+              <p><strong>Вплинув на:</strong></p>
+              <ul>
+                <li>{{influenced.[0]}}</li>
+                <li>{{influenced.[1]}}</li>
+                <li>{{influenced.[2]}}</li>
+                <li>{{influenced.[3]}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div>
+        <blockquote>Цитати:
+          <ul>
+            <i>
+              <li>{{quotes.[0]}}</li>
+              <li>{{quotes.[1]}}</li>
+              <li>{{quotes.[2]}}</li>
+              <li>{{quotes.[3]}}</li>
+            </i>
+          </ul>
+        </blockquote>
+      </div>
+      <hr>
+      <div>
+        <p><strong>Відкриття:</strong></p>
+        {{#each major_discoveries}}
+        <ul>
+          <li>Назва: <b>{{title}}</b></li>
+          <li>Рік: {{year}}</li>
+          <li>Опис: <b><i>{{description}}</i></b></li>
+        </ul>
         {{/each}}
-      </table>
+        <hr>
+        <p><strong>Внески:</strong></p>
+        {{#with contributions}}
+        <ul>
+          <li><b>Назва:</b> {{title}}</li>
+          <li><b>Опис:</b> {{description}}</li>
+          <li><b>Рік:</b> {{year}}</li>
+          <li><b>Тип:</b> {{field}}</li>
+        </ul>
+        {{/with}}
+      </div>
+      <hr>
+      <hr>
     </div>
-    <br>
-    <hr>
-    <div>
-      <table>
-        <caption><strong>Шлюб</strong></caption>
-        <tr>
-          <th>Ім'я</th>
-          <th>Відносини</th>
-          <th>Рік</th>
-        </tr>
-        {{#each partners}}
-        <tr>
-          <td>{{name}}</td>
-          <td>{{relationship}}</td>
-          <td>{{years}}</td>
-        </tr>
-        {{/each}}
-      </table>
-    </div>
-    <br>
-    <hr>
-    <div>
-      <p><strong>Awards</strong></p>
-      {{#each awards}} {{!-- продовження коду --}}
-      <ul>
-        <li>Назва: <b>{{title}}</b></li>
-        <li>Рік: <b>{{year}}</b></li>
-        <li>Опис: <b>{{description}}</b></li>
-      </ul>
-      {{/each}}
-    </div>
-  </section>
-
-  <hr>
-  <hr>
-
-  <section>
-    <div>
-      <p><strong>Цікавився:</strong></p>
-      <ul>
-        <li>{{influences.[0]}}</li>
-        <li>{{influences.[1]}}</li>
-        <li>{{influences.[2]}}</li>
-      </ul>
-    </div>
-    <hr>
-    <div>
-      <p><strong>Вплинув на:</strong></p>
-      <ul>
-        <li>{{influenced.[0]}}</li>
-        <li>{{influenced.[1]}}</li>
-        <li>{{influenced.[2]}}</li>
-        <li>{{influenced.[3]}}</li>
-      </ul>
-    </div>
-  </section>
-  <hr>
-  <hr>
-  <section>
-    <blockquote>Цитати:
-      <ul>
-        <i>
-          <li>{{quotes.[0]}}</li>
-          <li>{{quotes.[1]}}</li>
-          <li>{{quotes.[2]}}</li>
-          <li>{{quotes.[3]}}</li>
-        </i>
-      </ul>
-    </blockquote>
-  </section>
-  <hr>
-  <hr>
-  <br>
-  <section>
-    <p><strong>Відкриття:</strong></p>
-    {{#each major_discoveries}}
-    <ul>
-      <li>Назва: <b>{{title}}</b></li>
-      <li>Рік: {{year}}</li>
-      <li>Опис: <b><i>{{description}}</i></b></li>
-    </ul>
-    {{/each}}
-    <hr>
-    <p><strong>Внески:</strong></p>
-    {{#with contributions}}
-    <ul>
-      <li><b>Назва:</b> {{title}}</li>
-      <li><b>Опис:</b> {{description}}</li>
-      <li><b>Рік:</b> {{year}}</li>
-      <li><b>Тип:</b> {{field}}</li>
-    </ul>
-    {{/with}}
-  </section>
-  <hr>
-  <hr>
-
-</div>
+  </div>
+</main>

@@ -5,27 +5,20 @@
 
 <div>
     {{#with main}}
-    <main>
-        <section>
-            {{> title big=true data=summary.title}}
+    <div class="card">
+        <div class="card-header text-bg-info">{{> title big=true data=summary.title}}</div>
+        <div class="card-body">
+            <p>{{summary.text}}</p>
+        </div>
+    </div>
 
-            <div>
-                <p>{{summary.text}}</p>
-            </div>
-        </section>
-
-        {{!-- {{#with experience}} --}}
-        <section>
-            {{> title big=false data=experience.title}}
-
-            <div>
-                <p>{{experience.text}}</p>
-            </div>
-        </section>
-        {{!-- {{/with}} --}}
-    </main>
+    <div class="card mt-2">
+        <div class="card-header text-bg-warning">{{> title big=false data=experience.title}}</div>
+        <div class="card-body">
+            <p>{{experience.text}}</p>
+        </div>
+    </div>
     {{/with}}
-
 </div>
 
 {{!--
