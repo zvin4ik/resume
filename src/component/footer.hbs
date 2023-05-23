@@ -1,24 +1,35 @@
 {{#with footer}}
 <footer>
 	<hr>
-	<br>
-	<div>
+	
+	{{!-- <div>
 		{{#with social}}
 		{{> link text=email.text href=email.href blank=true}}
 		{{> link text=phone.text href=phone.href blank=true}}
 		{{> link text=linkedin.text href=linkedin.href blank=true noLine=true}}
 		{{/with}}
+	</div> --}}
+
+	<div class="row col-2">
+		<ul class="nav flex-column">
+			{{#with social}}
+			<li class="nav-item">
+				<a class="nav-link active" href="{{email.href}}">{{email.text}}</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link active" href="{{phone.href}}">{{phone.text}}</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link active" href="{{linkedin.href}}">{{linkedin.text}}</a>
+			</li>
+			
+			{{/with}}
+			</ul>
 	</div>
+	<hr>	
 
-	<br>
-
-	<div>
+	<div class="text-sm-end">
 		<em>Copyright by {{../header.name.firstname}} {{../header.name.lastname}}</em>
-	</div>
-
-	<br>
-
-	<div>
 		<address>{{../header.address}}</address>
 	</div>
 

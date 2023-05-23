@@ -40,7 +40,131 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+    person: {
+      name: 'Мишко',
+      description: 'Resume projects',
+    },
+    title: 'Назва проєктів',
+    description:
+      'Id elit pariatur pariatur velit et laboris mollit non aliquip nulla labore id. Ex aliquip amet et magna amet amet et exercitation elit incididunt. Laborum do laborum sint laborum occaecat. Reprehenderit laborum eiusmod aute esse.',
+    projects: {
+      first: [
+        {
+          name: 'summary',
+          link: '/summary',
+          isWarning: true,
+        },
+        {
+          name: 'skills',
+          link: '/skills',
+          isWarning: true,
+        },
+        {
+          name: 'education',
+          link: '/education',
+          isWarning: true,
+        },
+        {
+          name: 'work',
+          link: '/work',
+          isWarning: true,
+        },
+      ],
+      second: [
+        {
+          name: 'person',
+          link: '/person',
+          isInfo: true,
+        },
+        {
+          name: 'bio',
+          link: '/bio',
+          isInfo: true,
+        },
+        {
+          name: 'program',
+          link: '/program',
+          isInfo: true,
+        },
+        {
+          name: 'web',
+          link: '/web',
+          isInfo: true,
+        },
+        {
+          name: 'js',
+          link: '/js',
+          isInfo: true,
+        },
+        {
+          name: 'car',
+          link: '/car',
+          isInfo: true,
+        },
+        {
+          name: 'mac',
+          link: '/mac',
+          isInfo: true,
+        },
+        {
+          name: 'facebook',
+          link: '/facebook',
+          isInfo: true,
+        },
+      ],
+      third: [
+        {
+          name: 'task21',
+          link: '/task21',
+          isDanger: true,
+        },
+        {
+          name: 'task22',
+          link: '/task22',
+          isDanger: true,
+        },
+        {
+          name: 'task31',
+          link: '/task31',
+          isDanger: true,
+        },
+      ],
+      fourth: [
+        {
+          name: 'shophome',
+          link: '/shophome',
+          isSuccess: true,
+        },
+        {
+          name: 'shoporder',
+          link: '/shoporder',
+          isSuccess: true,
+        },
+        {
+          name: 'shopcart',
+          link: '/shopcart',
+          isSuccess: true,
+        },
+        {
+          name: 'shopprofile',
+          link: '/shopprofile',
+          isSuccess: true,
+        },
+        {
+          name: 'shopreview',
+          link: '/shopreview',
+          isSuccess: true,
+        },
+        {
+          name: 'shopcatalog',
+          link: '/shopcatalog',
+          isSuccess: true,
+        },
+      ],
+    },
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -208,10 +332,10 @@ router.get('/work', function (req, res) {
   res.render('work', {
     // ↙ сюди вводимо JSON дані
 
-    layout: 'big',
+    // layout: 'big',
 
     page: {
-      title: 'Resume | Education',
+      title: 'Resume | Work',
     },
 
     header,

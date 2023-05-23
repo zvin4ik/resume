@@ -1,160 +1,156 @@
-<div>
-  <h1>{{name}}</h1>
-  <h2><em>Опис:</em> {{description}}</h2>
-  <h3>Заснована у {{history.year}}, {{history.founder}}</h3>
-  <br>
-  <hr>
-  <br>
-  <section>
-    <div>
-      <p><b>Типи данних:</b></p>
-      {{#each types}}
-      <ul>
-        <li><button type="button" class="btn btn-info">{{this}}</button></li>
-        {{!-- <li><button type="button" class="btn btn-secondary">{{types.[1]}}</button></li>
-        <li><button type="button" class="btn btn-success">{{types.[2]}}</button></li>
-        <li><button type="button" class="btn btn-danger">{{types.[3]}}</button></li>
-        <li><button type="button" class="btn btn-warning">{{types.[4]}}</button></li>
-        <li><button type="button" class="btn btn-info">{{types.[5]}}</button></li>
-        <li><button type="button" class="btn btn-light">{{types.[6]}}</button></li> --}}
-      </ul>
-      {{/each}}
-    </div>
-    <br>
-    <hr>
-    <br>
-    <div>
-      <p>
-        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample"
-          aria-expanded="false" aria-controls="collapseWidthExample">
-          <b>Синтаксис:</b>
-        </button>
-      </p>
-      <div style="min-height: 120px;">
-        <div class="collapse collapse-horizontal" id="collapseWidthExample">
-          <div class="card card-body" style="width: 300px;">
-            {{#with syntax}}
-            <ol>
-              <li><i>{{variables.[0]}}</i></li>
-              <li><i>{{variables.[1]}}</i></li>
-              <li><i>{{variables.[2]}}</i></li>
-            </ol>
-            <ol type="a">
-              <li><mark>{{conditionals.[0]}}</mark></li>
-              <li><mark>{{conditionals.[1]}}</mark></li>
-              <li><mark>{{conditionals.[2]}}</mark></li>
-            </ol>
-            <ol type="I">
-              <li><b>{{loops.[0]}}</b></li>
-              <li><b>{{loops.[1]}}</b></li>
-              <li><b>{{loops.[2]}}</b></li>
-            </ol>
-            <ul>
-              <li>
-                <ins>{{classes}}</ins>
-              </li>
-            </ul>
-            <ul>
-              <li><b>{{functions}}</b></li>
-            </ul>
-            {{/with}}
+<main>
+  <div class="card">
+    <h1 class="card-header text-center">{{name}}</h1>
+    <div class="card-body">
+      <h4 class="cart-title">Опис: {{description}}</h4>
+      <p>Заснована у {{history.year}}, {{history.founder}}</p>
+      <hr>
+      <div>
+        <p class="text-center"><b>Синтаксис:</b></p>
+        {{#with syntax}}
+        <table class="table">
+          <thead>
+            <tr class="table-danger">
+              <th scope="col"></th>
+              <th scope="col">variables</th>
+              <th scope="col">conditionals</th>
+              <th scope="col">loops</th>
+              <th scope="col">functions</th>
+              <th scope="col">classes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>{{variables.[0]}}</td>
+              <td>{{conditionals.[0]}}</td>
+              <td>{{loops.[0]}}</td>
+              <td>{{functions.[0]}}</td>
+              <td>{{classes.[0]}}</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>{{variables.[1]}}</td>
+              <td>{{conditionals.[1]}}</td>
+              <td>{{loops.[1]}}</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>{{variables.[2]}}</td>
+              <td>{{conditionals.[2]}}</td>
+              <td>{{loops.[2]}}</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        {{/with}}
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-2">
+              <p><b>Біблоітеки:</b></p>
+              {{#each libraries}}
+              <div class="py-1">
+                <ul class="list-group">
+                  <li class="list-group-item">{{this}}</li>
+                  {{!-- <li class="list-group-item">{{libraries.[1]}}</li>
+                  <li class="list-group-item">{{libraries.[2]}}</li>
+                  <li class="list-group-item">{{libraries.[3]}}</li>
+                  <li class="list-group-item">{{libraries.[4]}}</li>
+                  <li class="list-group-item">{{libraries.[5]}}</li>
+                  <li class="list-group-item">{{libraries.[6]}}</li>
+                  <li class="list-group-item">{{libraries.[7]}}</li> --}}
+                </ul>
+              </div>
+              {{/each}}
+            </div>
+            <div class="col-2">
+              <p><b>Інструменти:</b></p>
+              {{#each tools}}
+              <div class="d-grid py-1">
+                <button type="button" class="btn btn-outline-success">{{this}}</button>
+                {{!-- <button type="button" class="btn btn-outline-secondary">{{tools.[1]}}</button>
+                <button type="button" class="btn btn-outline-success">{{tools.[2]}}</button>
+                <button type="button" class="btn btn-outline-danger">{{tools.[3]}}</button>
+                <button type="button" class="btn btn-outline-warning">{{tools.[4]}}</button>
+                <button type="button" class="btn btn-outline-info">{{tools.[5]}}</button>
+                <button type="button" class="btn btn-outline-light">{{tools.[6]}}</button>
+                <button type="button" class="btn btn-outline-dark">{{tools.[7]}}</button> --}}
+              </div>
+              {{/each}}
+            </div>
+            <div class="col-2">
+              <p><b>Типи данних:</b></p>
+              {{#each types}}
+              <ul>
+                <li><button type="button" class="btn btn-info">{{this}}</button></li>
+                {{!-- <li><button type="button" class="btn btn-secondary">{{types.[1]}}</button></li>
+                <li><button type="button" class="btn btn-success">{{types.[2]}}</button></li>
+                <li><button type="button" class="btn btn-danger">{{types.[3]}}</button></li>
+                <li><button type="button" class="btn btn-warning">{{types.[4]}}</button></li>
+                <li><button type="button" class="btn btn-info">{{types.[5]}}</button></li>
+                <li><button type="button" class="btn btn-light">{{types.[6]}}</button></li> --}}
+              </ul>
+              {{/each}}
+            </div>
+            <div class="col-2">
+              <p><b>Особливості:</b></p>
+              {{#each features}}
+              <ul>
+                <li><span class="badge rounded-pill text-bg-warning">{{this}}</span></li>
+                {{!-- <li><span class="badge rounded-pill text-bg-secondary">{{features.[1]}}</span></li>
+                <li><span class="badge rounded-pill text-bg-success">{{features.[2]}}</span></li>
+                <li><span class="badge rounded-pill text-bg-danger">{{features.[3]}}</span></li>
+                <li><span class="badge rounded-pill text-bg-warning">{{features.[4]}}</span></li>
+                <li><span class="badge rounded-pill text-bg-info">{{features.[5]}}</span></li> --}}
+              </ul>
+              {{/each}}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <br>
-    <hr>
-    <br>
-    <div>
-      <p><b>Особливості:</b></p>
-      {{#each features}}
-      <ul>
-        <li><span class="badge rounded-pill text-bg-warning">{{this}}</span></li>
-        {{!-- <li><span class="badge rounded-pill text-bg-secondary">{{features.[1]}}</span></li>
-        <li><span class="badge rounded-pill text-bg-success">{{features.[2]}}</span></li>
-        <li><span class="badge rounded-pill text-bg-danger">{{features.[3]}}</span></li>
-        <li><span class="badge rounded-pill text-bg-warning">{{features.[4]}}</span></li>
-        <li><span class="badge rounded-pill text-bg-info">{{features.[5]}}</span></li> --}}
-      </ul>
-      {{/each}}
-    </div>
-    <br>
-    <hr>
-    <br>
-    <div>
-      <p><b>Біблоітеки:</b></p>
-      {{#each libraries}}
-      <ol class="list-group list-group-numbered">
-        <li class="list-group-item">{{this}}</li>
-        {{!-- <li class="list-group-item">{{libraries.[1]}}</li>
-        <li class="list-group-item">{{libraries.[2]}}</li>
-        <li class="list-group-item">{{libraries.[3]}}</li>
-        <li class="list-group-item">{{libraries.[4]}}</li>
-        <li class="list-group-item">{{libraries.[5]}}</li>
-        <li class="list-group-item">{{libraries.[6]}}</li>
-        <li class="list-group-item">{{libraries.[7]}}</li> --}}
-      </ol>
-      {{/each}}
-    </div>
-    <br>
-    <hr>
-    <br>
-    <div>
-      <p><b>Інструменти:</b></p>
-      {{#each tools}}
-      <button type="button" class="btn btn-outline-success">{{this}}</button>
-      {{!-- <button type="button" class="btn btn-outline-secondary">{{tools.[1]}}</button>
-      <button type="button" class="btn btn-outline-success">{{tools.[2]}}</button>
-      <button type="button" class="btn btn-outline-danger">{{tools.[3]}}</button>
-      <button type="button" class="btn btn-outline-warning">{{tools.[4]}}</button>
-      <button type="button" class="btn btn-outline-info">{{tools.[5]}}</button>
-      <button type="button" class="btn btn-outline-light">{{tools.[6]}}</button>
-      <button type="button" class="btn btn-outline-dark">{{tools.[7]}}</button> --}}
-      {{/each}}
-    </div>
-    <br>
-    <hr>
-    <br>
-    <div>
-      <p><b>Спільноти:</b></p>
-
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          {{community.[0].name}}
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="https://stackoverflow.com/">{{community.[0].type}}</a></li>
-        </ul>
+      <hr>
+      <div>
+        <p><b>Спільноти:</b></p>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            {{community.[0].name}}
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://stackoverflow.com/">{{community.[0].type}}</a></li>
+          </ul>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            {{community.[1].name}}
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://javascriptweekly.com/">{{community.[1].type}}</a></li>
+          </ul>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            {{community.[2].name}}
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://changelog.com/podcast">{{community.[3].type}}</a></li>
+          </ul>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            {{community.[3].name}}
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://css-tricks.com/">{{community.[3].type}}</a></li>
+          </ul>
+        </div>
       </div>
-
-      <div class="btn-group">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          {{community.[1].name}}
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="https://javascriptweekly.com/">{{community.[1].type}}</a></li>
-        </ul>
-      </div>
-
-      <div class="btn-group">
-        <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          {{community.[2].name}}
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="https://changelog.com/podcast">{{community.[3].type}}</a></li>
-        </ul>
-      </div>
-
-      <div class="btn-group">
-        <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          {{community.[3].name}}
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="https://css-tricks.com/">{{community.[3].type}}</a></li>
-        </ul>
-      </div>
-
     </div>
-
-  </section>
-</div>
+  </div>
+</main>
